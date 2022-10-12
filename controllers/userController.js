@@ -13,6 +13,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
         name,
         email,
         password,
+        city
     } = req.body;
     if (!req.body.avatar) {
         return next(new ErrorHandler("Please upload avatar", 401))
@@ -29,7 +30,8 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
         avatar: {
             public_id: myCloud.public_id,
             url: myCloud.secure_url,
-        }
+        },
+        city
     });
     sendToken(user, 201, res)
 })
