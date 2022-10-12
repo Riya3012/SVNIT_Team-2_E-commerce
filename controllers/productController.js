@@ -4,7 +4,31 @@ const ErrorHandler = require("../utlis/errorhandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const Apifeatures = require("../utlis/apifeatures");
 const cloudinary = require("cloudinary")
+function getdate(date) {
+  var dd = date.getDate();
+  var mm = date.getMonth() + 1;
 
+  var yyyy = date.getFullYear();
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+  var today = dd + "/" + mm + "/" + yyyy;
+  return today;
+}
+
+function gettime(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? "pm" : "am";
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  var strTime = hours + ":" + minutes + " " + ampm;
+  return strTime;
+}
 // create product --admin
 // exports.(function_name) = rest of function {way to export functions ;) }
 exports.createProduct = catchAsyncErrors(async (req, res, next) => {
@@ -147,7 +171,7 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
         name: req.user.name,
         rating: Number(rating),
         comment,
-        timestamp: Date(),
+        timestamp: `${getdate(new Date())} ${gettime(new Date())}`,
     }
     const product = await Product.findById(productId)
     const isReviewed = product.reviews.find(rev => rev.user.toString() === req.user._id.toString())
