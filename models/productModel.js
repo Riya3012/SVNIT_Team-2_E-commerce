@@ -77,6 +77,10 @@ const productSchema = mongoose.Schema({
         timestamp:{
             type:Date
         },
+        createdAt:{
+            type: Date,
+            default: Date.now
+    },
     }],
     user:{
         type:mongoose.Schema.ObjectId,
