@@ -92,7 +92,7 @@
   cursor: pointer;
   color: white;
   transition: all 0.5s;
-  background-color: rgb(42, 62, 219);
+  background-color: tomato;
   font: 500 0.7vmax "Roboto";
   border-radius: 20px;
   padding: 0.5vmax 2vmax;
@@ -125,7 +125,7 @@
 
 .submitReview {
   border: none;
-  background-color: rgb(42, 62, 219);
+  background-color: tomato;
   font: 500 0.7vmax "Roboto";
   border-radius: 20px;
   padding: 0.6vmax 2vmax;
@@ -165,30 +165,33 @@
 .reviews {
   display: flex;
   overflow: auto;
+  flex-direction: column;
+  background-color: #d2d2d2;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 .reviewCard {
-  flex: none;
-
+  flex: auto;
+  background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
   border: 1px solid rgba(56, 56, 56, 0.116);
-  width: 30vmax;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  /* align-items: center; */
   margin: 1vmax;
-  padding: 3vmax;
+  padding: 2vmax;
 }
-.reviewCard > img {
+.leftdiv > img {
   width: 5vmax;
 }
-.reviewCard > p {
+.rightdiv > p {
   color: rgba(0, 0, 0, 0.836);
   font: 600 0.9vmax "Roboto";
 }
 .reviewCardComment {
   color: rgba(0, 0, 0, 0.445);
-  font: 300 0.8vmax cursive;
+  font: 400 0.9vmax cursive;
 }
 
 .noReviews {
