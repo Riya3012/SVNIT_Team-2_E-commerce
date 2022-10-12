@@ -22,6 +22,15 @@ import {
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 
+import {Stack} from "@mui/material"
+
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { Typography } from "@mui/material";
+
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -99,6 +108,16 @@ const ProductDetails = ({ match }) => {
     dispatch(getProductDetails(match.params.id));
   }, [dispatch, match.params.id, error, alert, reviewError, success]);
 
+
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+
+    //code to modify the array here
+
+  };
+
   return (
     <Fragment>
       {loading ? (
@@ -166,8 +185,37 @@ const ProductDetails = ({ match }) => {
               </button>
             </div>
           </div>
+          <div>
+            <h3 className="reviewsHeading" >
+              <Stack direction="row">
 
-          <h3 className="reviewsHeading">REVIEWS</h3>
+                <Typography  style={{
+                  margin:"0px 6px",
+                  padding:"0px 6px",
+                }} variant="h5" justifyContent="center" alignItems="center">
+                    REVIEWS
+                </Typography>
+                <FormControl 
+                style={{
+                  margin:"0px 6px",
+                  padding:"0px 6px",
+                }}
+                fullWidth variant="standard">
+                    <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={age}
+                      label="Sort by"
+                      onChange={handleChange}
+                      >
+                      <MenuItem value={"timestamp"}>Time-Stamp</MenuItem>
+                      <MenuItem value={"rating"}>Ratings</MenuItem>
+                    </Select>
+                  </FormControl>
+              </Stack>
+              </h3>
+          </div>
 
           <Dialog
             aria-labelledby="simple-dialog-title"
@@ -175,6 +223,7 @@ const ProductDetails = ({ match }) => {
             onClose={submitReviewToggle}
           >
             <DialogTitle>Submit Review</DialogTitle>
+            
             <DialogContent className="submitDialog">
               <Rating
                 onChange={(e) => setRating(e.target.value)}
@@ -199,7 +248,6 @@ const ProductDetails = ({ match }) => {
               </Button>
             </DialogActions>
           </Dialog>
-
           {product.reviews && product.reviews[0] ? (
             <div className="reviews">
               {product.reviews &&
