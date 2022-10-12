@@ -109,7 +109,7 @@
 }
 
 .orderSummary > button {
-  background-color: tomato;
+  background-color: rgb(42, 62, 219);
   color: white;
   width: 100%;
   padding: 1vmax;
