@@ -178,7 +178,7 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     if (isReviewed) {
         product.reviews.forEach((rev) => {
             if (rev.user.toString() === req.user._id.toString())
-                rev.rating = rating, rev.comment = comment;
+                rev.rating = rating, rev.comment = comment , rev.timestamp = `${getdate(new Date())} ${gettime(new Date())}`;
         })
     } else {
         product.reviews.push(review)
