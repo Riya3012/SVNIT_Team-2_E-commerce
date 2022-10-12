@@ -73,7 +73,10 @@ const productSchema = mongoose.Schema({
         comment: {
             type: String,
             required: true
-        }
+        },
+        timestamp:{
+            type:Date
+        },
     }],
     user:{
         type:mongoose.Schema.ObjectId,
