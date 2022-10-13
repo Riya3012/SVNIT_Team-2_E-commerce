@@ -4,6 +4,12 @@ For backend: npm i
 
 For frontend: open terminal in frontend folder then type 'npm i'
 
+For starting frontend server type :
+npm start in frontend folder 
+
+For starting backend server type :
+npm start in root folder
+
 ## Env Variables
 
 Make Sure to Create a config.env file in backend/config directory and add appropriate variables in order to use the app.
