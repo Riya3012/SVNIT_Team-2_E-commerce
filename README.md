@@ -2,7 +2,7 @@
 
 For backend: npm i
 
-For frontend: cd frontend npm i
+For frontend: open terminal in frontend folder then type 'npm i'
 
 ## Env Variables
 
