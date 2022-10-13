@@ -12,33 +12,91 @@ const About = () => {
       <div></div>
       <div className="aboutSectionGradient"></div>
       <div className="aboutSectionContainer">
-        <Typography component="h1">About Me</Typography>
+        <Typography
+          component="h1"
+          style={{
+            color: "#000",
+            fontFamily:
+              "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+          }}
+        >
+          About Us
+        </Typography>
 
         <div>
           <div>
-            <Avatar
-              style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/ecommerce0510/image/upload/v1643263274/avatars/271132470_506892223917314_2788328017502867722_n_k8rny8.jpg"
-              alt="Founder"
-            />
-            <Typography>Paril Sanghvi</Typography>
-            <Button onClick={visitGitHub} color="primary">
-              Visit GitHub
-            </Button>
-            <span>
-              This is a sample wesbite made by Paril Sanghvi.
+            <Typography
+              style={{
+                fontSize: "30px",
+                color: "#000",
+                fontFamily:
+                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+                margin: "0px 0px 30px 0px",
+              }}
+            >
+              TEAMP-02
+            </Typography>
+            <span
+              style={{
+                fontSize: "30px",
+                fontFamily:
+                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+              }}
+            >
+              Himanshu Tirole
+            </span>
+            <span
+              style={{
+                fontSize: "30px",
+                fontFamily:
+                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+              }}
+            >
+              Mudit Nema
+            </span>
+            <span
+              style={{
+                fontSize: "30px",
+                fontFamily:
+                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+              }}
+            >
+              Paril Sanghvi
+            </span>
+            <span
+              style={{
+                fontSize: "30px",
+                fontFamily:
+                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+              }}
+            >
+              Riya Shah
+            </span>
+            <span
+              style={{
+                fontSize: "30px",
+                fontFamily:
+                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+              }}
+            >
+              Shreyash Mahajan
             </span>
           </div>
           <div className="aboutSectionContainer2">
-            <Typography component="h2">Contact Me</Typography>
+            <Typography
+              style={{
+                color: "#000",
+                fontFamily:
+                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+              }}
+              component="h2"
+            >
+              Contact Us
+            </Typography>
             <a
-              href="https://www.linkedin.com/in/paril-sanghvi-38627b217/"
+              href="https://github.com/Riya3012/SVNIT_Team-2_E-commerce"
               target="blank"
             >
-              <LinkedInIcon className="youtubeSvgIcon" />
-            </a>
-
-            <a href="https://github.com/Thunderer0" target="blank">
               <GitHubIcon className="instagramSvgIcon" />
             </a>
           </div>
