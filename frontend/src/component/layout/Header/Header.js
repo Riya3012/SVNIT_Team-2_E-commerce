@@ -17,7 +17,8 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { useState } from 'react';
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -63,7 +64,7 @@ const Search = styled('div')(({ theme }) => ({
 
 const Header = () => {
 
-
+    const history = useHistory();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   
@@ -160,7 +161,17 @@ const Header = () => {
         </MenuItem>
       </Menu>
     );
-  
+      const [searchTab, setsearchTab] = useState("")
+    const handleSearchChange = (e) => {
+      setsearchTab(e.target.value)
+      e.preventDefault()
+        if (e.target.value.trim()) {
+            history.push(`/products/${e.target.value}`)
+        }else{
+            history.push(`/products`)
+        }
+    }
+
     return (
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
@@ -189,10 +200,13 @@ const Header = () => {
                     <StyledInputBase
                     placeholder="Search…"
                     inputProps={{ 'aria-label': 'search' }}
+                    onChange={handleSearchChange}
+                    value={searchTab}
                     />
                 </Search>
                 </Box>
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                  <Link to="/cart" style={{color:"white",padding:"4px 8px",textDecoration:"none",fontSize:"22px"}}>
                 <IconButton
                     size="large"
                     edge="end"
@@ -204,6 +218,8 @@ const Header = () => {
                 >
                     <ShoppingCartIcon />
                 </IconButton>
+                </Link>
+                <Link to="/login" style={{color:"white",padding:"4px 8px",textDecoration:"none",fontSize:"22px"}}>
                 <IconButton
                     size="large"
                     edge="end"
@@ -215,6 +231,7 @@ const Header = () => {
                 >
                     <AccountCircle />
                 </IconButton>
+                </Link>
                 </Box>
           </Toolbar>
         </AppBar>

@@ -24,7 +24,10 @@ const Home = () => {
         {loading?(<Loader/>):(<Fragment>
         <MetaData title="ECOMMERCE"/>
         <div className="banner">
-            <p>Welcome to Ecommerce</p>
+            <p  style={{
+                fontWeight: "bold",
+                fontSize:"35px"
+            }} >Welcome to Ecommerce</p>
             <h1>FIND AMAZING PRODUCTS BELOW</h1>
             <a href="#container">
                 <button>
