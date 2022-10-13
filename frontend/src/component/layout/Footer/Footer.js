@@ -14,12 +14,11 @@ const Footer = () =>{
         <div className="midFooter">
             <h1>Ecommerce Website</h1>
             <p>Quality over Quantity</p>
-            <p>Copyrights 2021 &copy; ParilSanghvi</p>
+            <p>Copyrights 2021 &copy; Team-02</p>
         </div>
         <div className="rightFooter">
-            <h4>Hope you like my website</h4>
-            <a href="https://github.com/Thunderer0">Github</a>
-            <a href="https://www.linkedin.com/in/paril-sanghvi-38627b217/">Linkedin</a>
+            <h4>Hope you like our website</h4>
+            <a href="https://github.com/Riya3012/SVNIT_Team-2_E-commerce">Github</a>
         </div>
         </footer>
     );

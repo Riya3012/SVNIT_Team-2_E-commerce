@@ -3,6 +3,7 @@ import "./LoginSignUp.css";
 import Loader from "../layout/Loader";
 import { Link } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import LocationCityIcon from '@material-ui/icons/LocationCity';
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import FaceIcon from "@material-ui/icons/Face";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,9 +29,10 @@ const LoginSignUp = ({ history, location }) => {
     name: "",
     email: "",
     password: "",
+    city: "",
   });
 
-  const { name, email, password } = user;
+  const { name, email, password,city } = user;
 
   const [avatar, setAvatar] = useState("");
   const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
@@ -49,6 +51,7 @@ const LoginSignUp = ({ history, location }) => {
     myForm.set("email", email);
     myForm.set("password", password);
     myForm.set("avatar", avatar);
+      myForm.set("city", city);
     dispatch(register(myForm));
     history.push("/login")
   };
@@ -164,6 +167,17 @@ const LoginSignUp = ({ history, location }) => {
                     required
                     name="email"
                     value={email}
+                    onChange={registerDataChange}
+                  />
+                </div>
+                <div className="signUpEmail">
+                  <LocationCityIcon />
+                  <input
+                    type="text"
+                    placeholder="City"
+                    required
+                    name="city"
+                    value={city}
                     onChange={registerDataChange}
                   />
                 </div>

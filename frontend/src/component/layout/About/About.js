@@ -12,36 +12,20 @@ const About = () => {
       <div></div>
       <div className="aboutSectionGradient"></div>
       <div className="aboutSectionContainer">
-        <Typography component="h1">About Me</Typography>
+        <Typography component="h1">About Us</Typography>
 
         <div>
-          <div>
-            <Avatar
-              style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/ecommerce0510/image/upload/v1643263274/avatars/271132470_506892223917314_2788328017502867722_n_k8rny8.jpg"
-              alt="Founder"
-            />
-            <Typography>Paril Sanghvi</Typography>
-            <Button onClick={visitGitHub} color="primary">
-              Visit GitHub
-            </Button>
-            <span>
-              This is a sample wesbite made by Paril Sanghvi.
-            </span>
+          <div  >
+            <div  className="aboutus " >Paril Sanghvi</div>
+             <div  className="aboutus">Mudit Nema</div>
+             <div  className="aboutus">Shreyas Mahajan</div>
+             <div  className="aboutus">Himanshu Tirole</div>
+             <div  className="aboutus">Riya Shah</div>
+            <div   className="aboutus">
+              This is a  wesbite made by Team 2.
+            </div>
           </div>
-          <div className="aboutSectionContainer2">
-            <Typography component="h2">Contact Me</Typography>
-            <a
-              href="https://www.linkedin.com/in/paril-sanghvi-38627b217/"
-              target="blank"
-            >
-              <LinkedInIcon className="youtubeSvgIcon" />
-            </a>
-
-            <a href="https://github.com/Thunderer0" target="blank">
-              <GitHubIcon className="instagramSvgIcon" />
-            </a>
-          </div>
+          
         </div>
       </div>
     </div>

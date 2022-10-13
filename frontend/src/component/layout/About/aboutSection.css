@@ -16,6 +16,11 @@
   );
 }
 
+.aboutus {
+  font-size: 32px;
+  color:rgb(78, 81, 255);
+  font-weight:bold
+}
 .aboutSectionContainer {
   position: absolute;
   left: 50%;
@@ -33,7 +38,7 @@
 
 .aboutSectionContainer > h1 {
   font: 400 3vmax "Roboto";
-  color: tomato;
+  color: rgb(86, 27, 104);
   margin: 2vmax;
 }
 
@@ -122,3 +127,4 @@
     margin: 1vmax;
   }
 }
+
