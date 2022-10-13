@@ -2,16 +2,25 @@
   height: 100vh;
   width: 100vw;
   max-width: 100%;
-  background-color: rgb(37, 37, 37);
+  background-color: white;
   display: grid;
   grid-template-columns: 4fr 4fr;
   position: fixed;
 }
 
 .aboutSectionGradient {
-  background-color: rgb(37, 37, 37);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189)
+  );
 }
 
+.aboutus {
+  font-size: 32px;
+  color:rgb(78, 81, 255);
+  font-weight:bold
+}
 .aboutSectionContainer {
   position: absolute;
   left: 50%;
@@ -29,7 +38,7 @@
 
 .aboutSectionContainer > h1 {
   font: 400 3vmax "Roboto";
-  color: rgb(37, 37, 37);
+  color: rgb(86, 27, 104);
   margin: 2vmax;
 }
 

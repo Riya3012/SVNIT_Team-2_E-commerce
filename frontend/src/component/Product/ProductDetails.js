@@ -22,14 +22,15 @@ import {
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 
-import { Stack } from "@mui/material";
+import {Stack} from "@mui/material"
 
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import { Typography } from "@mui/material";
+
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -107,7 +108,8 @@ const ProductDetails = ({ match }) => {
     dispatch(getProductDetails(match.params.id));
   }, [dispatch, match.params.id, error, alert, reviewError, success]);
 
-  const [age, setAge] = React.useState("");
+
+  const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -158,11 +160,6 @@ const ProductDetails = ({ match }) => {
                     <button onClick={increaseQuantity}>+</button>
                   </div>
                   <button
-                    style={{
-                      fontSize: "medium",
-                      fontFamily:
-                        "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-                    }}
                     disabled={product.stock < 1 ? true : false}
                     onClick={addToCartHandler}
                   >
@@ -182,80 +179,41 @@ const ProductDetails = ({ match }) => {
                 Description : <p>{product.description}</p>
               </div>
 
-              <button
-                style={{
-                  fontSize: "medium",
-                  fontFamily:
-                    "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-                }}
-                onClick={submitReviewToggle}
-                className="submitReview"
-              >
+              <button onClick={submitReviewToggle} className="submitReview">
                 Submit Review
               </button>
             </div>
           </div>
           <div>
-            <h3 className="reviewsHeading">
-              <Typography
+            <h3 className="reviewsHeading" >
+              <Stack direction="row">
+
+                <Typography  style={{
+                  margin:"0px 6px",
+                  padding:"0px 6px",
+                }} variant="h5" justifyContent="center" alignItems="center">
+                    REVIEWS
+                </Typography>
+                <FormControl 
                 style={{
-                  margin: "0px 6px",
-                  padding: "0px 6px",
+                  margin:"0px 6px",
+                  padding:"0px 6px",
                 }}
-                variant="h5"
-                justifyContent="center"
-                alignItems="center"
-              >
-                REVIEWS
-              </Typography>
-            </h3>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              width: "100%",
-              alignItems: "center",
-              alignContent: "center",
-              justifyContent: "center",
-            }}
-          >
-            <FormControl
-              variant="outlined"
-              style={{
-                width: "50%",
-                alignSelf: "center",
-                backgroundColor: "rgba(0, 0, 0, 0.226)",
-              }}
-            >
-              <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
-              <Select
-                labelId="demo-simple-outlined-label"
-                id="demo-simple-select-outlined"
-                value={age}
-                label="Sort by"
-                onChange={handleChange}
-                MenuProps={{}}
-              >
-                <MenuItem
-                  style={{
-                    display: "block",
-                    padding: "5px",
-                  }}
-                  value={"timestamp"}
-                >
-                  Time-Stamp
-                </MenuItem>
-                <MenuItem
-                  style={{
-                    display: "block",
-                    padding: "5px",
-                  }}
-                  value={"rating"}
-                >
-                  Ratings
-                </MenuItem>
-              </Select>
-            </FormControl>
+                fullWidth variant="standard">
+                    <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={age}
+                      label="Sort by"
+                      onChange={handleChange}
+                      >
+                      <MenuItem value={"timestamp"}>Time-Stamp</MenuItem>
+                      <MenuItem value={"rating"}>Ratings</MenuItem>
+                    </Select>
+                  </FormControl>
+              </Stack>
+              </h3>
           </div>
 
           <Dialog
@@ -264,7 +222,7 @@ const ProductDetails = ({ match }) => {
             onClose={submitReviewToggle}
           >
             <DialogTitle>Submit Review</DialogTitle>
-
+            
             <DialogContent className="submitDialog">
               <Rating
                 onChange={(e) => setRating(e.target.value)}

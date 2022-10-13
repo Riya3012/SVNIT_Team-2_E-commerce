@@ -11,7 +11,7 @@
 .products {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 12vmax;
+    padding: 0 5vmax;
     justify-content: center;
     min-height: 30vh;
 }
@@ -61,7 +61,7 @@
 }
 
 .pageItemActive {
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(42, 62, 219);
 }
 
 .pageLinkActive {
@@ -69,10 +69,10 @@
 }
 
 .filterBox {
-    width: 15vmax;
+    width: 10vmax;
     position: absolute;
     top: 10vmax;
-    left: 2vmax;
+    left: 4vmax;
 }
 
 .categoryBox {
@@ -81,15 +81,15 @@
 
 .category-link {
     list-style: none;
-    color: rgb(53, 53, 53);
-    font: 400 0.9vmax "Roboto";
+    color: rgba(0, 0, 0, 0.61);
+    font: 400 0.8vmax "Roboto";
     margin: 0.4vmax;
     cursor: pointer;
     transition: all 0.5s;
 }
 
 .category-link:hover {
-    color: rgb(37, 37, 37);
+    color: rgb(42, 62, 219);
 }
 
 .filterBox>fieldset {

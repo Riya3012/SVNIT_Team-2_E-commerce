@@ -29,7 +29,7 @@ const ReviewCard = ({ review }) => {
                 font: "600 0.9vmax Roboto",
               }}
             >
-              {review.timestamp}
+              {review?.timestamp}
             </p>
           </span>
           <div

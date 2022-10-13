@@ -12,94 +12,20 @@ const About = () => {
       <div></div>
       <div className="aboutSectionGradient"></div>
       <div className="aboutSectionContainer">
-        <Typography
-          component="h1"
-          style={{
-            color: "#000",
-            fontFamily:
-              "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-          }}
-        >
-          About Us
-        </Typography>
+        <Typography component="h1">About Us</Typography>
 
         <div>
-          <div>
-            <Typography
-              style={{
-                fontSize: "30px",
-                color: "#000",
-                fontFamily:
-                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-                margin: "0px 0px 30px 0px",
-              }}
-            >
-              TEAMP-02
-            </Typography>
-            <span
-              style={{
-                fontSize: "30px",
-                fontFamily:
-                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-              }}
-            >
-              Himanshu Tirole
-            </span>
-            <span
-              style={{
-                fontSize: "30px",
-                fontFamily:
-                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-              }}
-            >
-              Mudit Nema
-            </span>
-            <span
-              style={{
-                fontSize: "30px",
-                fontFamily:
-                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-              }}
-            >
-              Paril Sanghvi
-            </span>
-            <span
-              style={{
-                fontSize: "30px",
-                fontFamily:
-                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-              }}
-            >
-              Riya Shah
-            </span>
-            <span
-              style={{
-                fontSize: "30px",
-                fontFamily:
-                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-              }}
-            >
-              Shreyash Mahajan
-            </span>
+          <div  >
+            <div  className="aboutus " >Paril Sanghvi</div>
+             <div  className="aboutus">Mudit Nema</div>
+             <div  className="aboutus">Shreyas Mahajan</div>
+             <div  className="aboutus">Himanshu Tirole</div>
+             <div  className="aboutus">Riya Shah</div>
+            <div   className="aboutus">
+              This is a  wesbite made by Team 2.
+            </div>
           </div>
-          <div className="aboutSectionContainer2">
-            <Typography
-              style={{
-                color: "#000",
-                fontFamily:
-                  "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-              }}
-              component="h2"
-            >
-              Contact Us
-            </Typography>
-            <a
-              href="https://github.com/Riya3012/SVNIT_Team-2_E-commerce"
-              target="blank"
-            >
-              <GitHubIcon className="instagramSvgIcon" />
-            </a>
-          </div>
+          
         </div>
       </div>
     </div>
