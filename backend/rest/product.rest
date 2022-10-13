@@ -1,0 +1,63 @@
+GET http://localhost:8080/api/v1/products
+# get all products
+###
+POST http://localhost:8080/api/v1/admin/product/new
+# create product --admin
+Content-Type: application/json
+
+{
+    "name":"product8",
+    "price":"1700",
+    "description":" this is a sample product",
+    "category": "laptop",
+    "images":{
+        "public_id":"sample image",
+        "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZx3nN0q0SKqrFVUwLzJfb4pGdY51COMcQbw&usqp=CAU"
+    }
+}
+###
+PUT http://localhost:8080/api/v1/admin/product/61b4cff6102477046e5f77ac
+# update product --admin
+Content-Type: application/json
+
+{
+    "name":"product2",
+    "price":"1500",
+    "description":" this is a sample product",
+    "category": "laptop",
+    "images":[
+        {
+        "public_id":"sample image",
+        "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZx3nN0q0SKqrFVUwLzJfb4pGdY51COMcQbw&usqp=CAU"
+        },
+        {
+        "public_id":"sample image",
+        "url":"https://images.hindustantimes.com/auto/img/2021/02/05/600x338/apple_icar_youtube_1612505634970_1612505641070.jpg"
+        }
+    ]
+}
+###
+DELETE  http://localhost:8080/api/v1/admin/product/61b4c72b5577ed0fdb5ca3ee
+# delete product --admin
+###
+# get single product
+GET   http://localhost:8080/api/v1/product/61b4d260b5586bd8a1315b01
+###
+GET http://localhost:8080/api/v1/products?keyword=product1&price[gt]=200&price[lt]=1500
+###
+GET http://localhost:8080/api/v1/products?page=2
+###
+PUT  http://localhost:8080/api/v1/review
+Content-Type: application/json
+
+ {
+     "productId": "61b4cff6102477046e5f77ac",
+     "comment": "most amazing website",
+     "rating": "3"
+ }
+###
+#get reviews
+GET  http://localhost:8080/api/v1/reviews?id=61b4cff6102477046e5f77ac
+###
+#delete reviews
+DELETE  http://localhost:8080/api/v1/reviews?id=61bd0557cdc4b59cfe8fa6fa&productId=61b4cff6102477046e5f77ac
